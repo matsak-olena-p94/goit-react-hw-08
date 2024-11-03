@@ -1,15 +1,14 @@
-import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/operations';
+import { NavLink } from 'react-router-dom';
 
-const Contact = ({ contact }) => {
-  const dispatch = useDispatch();
-
+export const AuthNav = () => {
   return (
-    <li>
-      {contact.name}: {contact.number}
-      <button onClick={() => dispatch(deleteContact(contact.id))}>Delete</button>
-    </li>
+    <div>
+      <NavLink to="/register">
+        Register
+      </NavLink>
+      <NavLink to="/login">
+        Log In
+      </NavLink>
+    </div>
   );
 };
-
-export default Contact;
